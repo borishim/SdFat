@@ -239,6 +239,10 @@ class FsBaseFile {
     return m_xFile ? m_xFile->isContiguous() : false;
 #endif  // USE_FAT_FILE_FLAG_CONTIGUOUS
   }
+  bool isFile() const {
+    return m_fFile ? m_fFile->isFile() :
+           m_xFile ? m_xFile->isFile() : false;
+  }
   /** \return True if this is a directory else false. */
   bool isDir() const {
     return m_fFile ? m_fFile->isDir() :
